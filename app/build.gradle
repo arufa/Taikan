@@ -3,6 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
+    testBuildType "release"
+    testBuildType "debug"
     defaultConfig {
         applicationId "com.example.user.taikan"
         minSdkVersion 23
@@ -12,8 +14,12 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-        release {
+        debug{
+
             testCoverageEnabled true
+        }
+        release {
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
